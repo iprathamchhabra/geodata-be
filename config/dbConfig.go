@@ -3,20 +3,13 @@ package config
 import (
 	"fmt"
 	"geo-data/models"
-	"os"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
 func ConnectDB() (*gorm.DB, error) {
-	host := os.Getenv("DB_HOST")
-	user := os.Getenv("DB_USER")
-	dbname := os.Getenv("DB_NAME")
-	sslmode := os.Getenv("DB_SSLMODE")
-	password := os.Getenv("DB_PASSWORD")
-	port := os.Getenv("DB_PORT")
 
-	dsn := fmt.Sprintf("host=%s user=%s dbname=%s sslmode=%s password=%s port=%s", host, user, dbname, sslmode, password, port)
+	dsn := "host=dpg-ctv2mk1u0jms73as2iqg-a user=goe_data_database_user password=BTY0odnVwmhBFsCrJ2J6H0bKbiw1vUqz dbname=goe_data_database port=5432 TimeZone=Asia/Shanghai"
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		fmt.Println("Failed to connect to database:", err)
