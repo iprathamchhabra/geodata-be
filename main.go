@@ -4,9 +4,7 @@ import (
 	"fmt"
 	"geo-data/config"
 	"geo-data/routes"
-	"log"
 	"net/http"
-	"github.com/joho/godotenv"
 )
 
 func corsMiddleware(next http.HandlerFunc) http.HandlerFunc {
