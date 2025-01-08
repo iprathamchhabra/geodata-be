@@ -9,7 +9,7 @@ import (
 
 func ConnectDB() (*gorm.DB, error) {
 
-	dsn := "host=dpg-ctv2mk1u0jms73as2iqg-a user=goe_data_database_user password=BTY0odnVwmhBFsCrJ2J6H0bKbiw1vUqz dbname=goe_data_database port=5432 TimeZone=Asia/Shanghai"
+	dsn := "host=dpg-ctv2mk1u0jms73as2iqg-a.singapore-postgres.render.com user=goe_data_database_user password=BTY0odnVwmhBFsCrJ2J6H0bKbiw1vUqz dbname=goe_data_database port=5432 TimeZone=Asia/Shanghai"
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		fmt.Println("Failed to connect to database:", err)
